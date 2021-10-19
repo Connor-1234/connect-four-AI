@@ -45,24 +45,24 @@ def player(board):
         return blue
 
 
-def neighbors(board, action):
-    score = 0
-    high_score = None
-    for i in range(action[0] - 1, action[0] + 2):
-        for j in range(action[1] - 1, action[1] + 2):
-            if 0 <= i < 5 and 0 <= j < 6:
-                if board[i][j] is None:
-                    new_action = (i, j)
-                    if terminal(result(board, new_action)):
-                        return utility(board)
-                    if player(board) == red:
-                        score = score_board_red(result(board, new_action))
-                    else:
-                        score = score_board_blue(result(board, new_action))
-            high_score = 0
-            if abs(score) > high_score:
-                high_score = score
-    return high_score
+# def neighbors(board, action): fn not used.
+    # score = 0
+    # high_score = None
+    # for i in range(action[0] - 1, action[0] + 2):
+        # for j in range(action[1] - 1, action[1] + 2):
+            # if 0 <= i < 5 and 0 <= j < 6:
+                #if board[i][j] is None:
+                    # new_action = (i, j)
+                    # if terminal(result(board, new_action)):
+                        # return utility(board)
+                    # if player(board) == red:
+                       # score = score_board_red(result(board, new_action))
+                    # else:
+                       # score = score_board_blue(result(board, new_action))
+           # high_score = 0
+           # if abs(score) > high_score:
+               # high_score = score
+   # return high_score
 
 
 def actions(board):
